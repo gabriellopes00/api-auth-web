@@ -1,10 +1,17 @@
+import { UserList } from '../../components/usersList/index'
+
+// export const Dashboard: React.FC = () => {
+//   return (
+//     <div className="w-full h-full bg-grey-300">
+//       <UserList />
+//     </div>
+//   )
+// }
+
 export const Dashboard: React.FC = () => {
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <h1>Dashboard</h1>
-      <h1>Dashboard</h1>
-      <h1>Dashboard</h1>
+    <div className="bg-gray-300 w-full h-screen flex items-center justify-center ">
+      <UserList />
     </div>
   )
 }
