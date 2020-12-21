@@ -1,1 +1,1 @@
-export const login = () => localStorage.removeItem('privateKey')
+export const logout = (item: string) => localStorage.removeItem(item)

@@ -1,9 +1,10 @@
 import { ListRow } from './row'
 
 export const UserList: React.FC = () => {
+  const numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   return (
     <div className="md:px-32 py-8 w-full">
-      <div className="shadow overflow-x-scroll rounded border-b border-green-600">
+      <div className="shadow-xl overflow-scroll h-96 rounded border-b border-green-600">
         <table className="min-w-full bg-white">
           <thead className="bg-green-600 text-white">
             <tr>
@@ -22,11 +23,15 @@ export const UserList: React.FC = () => {
             </tr>
           </thead>
           <tbody className="text-gray-700">
-            <ListRow
-              userName="gabriel"
-              userEmail="gabriel@example.com"
-              userId="afjkfhuiahf"
-            />
+            {numbers.map(number => {
+              return (
+                <ListRow
+                  userName="Gabriel Lopes"
+                  userEmail="gabriel@example.com"
+                  userId="5fe09f69565b57217002e2db"
+                />
+              )
+            })}
           </tbody>
         </table>
       </div>
