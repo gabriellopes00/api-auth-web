@@ -1,35 +1,35 @@
+import { ListRow } from './row'
+
 export const UserList: React.FC = () => {
   return (
-    <div className="w-full h-full">
-      <table className="table-auto border-collapse border border-green-700">
-        <thead>
-          <tr>
-            <th className="border border-green-600">Title</th>
-            <th className="border border-green-600">Author</th>
-            <th className="border border-green-600">Views</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Intro to CSS</td>
-            <td>Adam</td>
-            <td>858</td>
-          </tr>
-          <tr className="bg-emerald-200">
-            <td>
-              A Long and Winding Tour of the History of UI Frameworks and Tools
-              and the Impact on Design
-            </td>
-            <td>Adam</td>
-            <td>112</td>
-          </tr>
-          <tr>
-            <td>Intro to JavaScript</td>
-            <td>Chris</td>
-            <td>1,280</td>
-          </tr>
-        </tbody>
-      </table>
+    <div className="md:px-32 py-8 w-full">
+      <div className="shadow overflow-x-scroll rounded border-b border-green-600">
+        <table className="min-w-full bg-white">
+          <thead className="bg-green-600 text-white">
+            <tr>
+              <th className="w-1/3 text-center py-3 px-4 uppercase font-semibold text-sm">
+                Name
+              </th>
+              <th className="w-1/3 text-center py-3 px-4 uppercase font-semibold text-sm">
+                Email
+              </th>
+              <th className="text-center py-3 px-4 uppercase font-semibold text-sm">
+                ID
+              </th>
+              <th className="text-center py-3 px-4 uppercase font-semibold text-sm">
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody className="text-gray-700">
+            <ListRow
+              userName="gabriel"
+              userEmail="gabriel@example.com"
+              userId="afjkfhuiahf"
+            />
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
