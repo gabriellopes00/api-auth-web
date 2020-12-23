@@ -15,7 +15,7 @@ export const SideBar: React.FC = () => {
           logout('privateKey')
           goBack()
         }}
-        className="flex items-center justify-center p-2 w-12 h-12 mt-2 lg:mt-8 mx-1 rounded-md bg-green-800  text-gray-100 hover:shadow-lg transition hover:bg-green-900"
+        className="flex items-center justify-center p-2 w-12 h-12 mt-2 lg:mt-2 mx-1 rounded-md bg-green-800 text-gray-100 hover:shadow-lg hover:bg-green-900 transition"
       >
         <FontAwesomeIcon icon="angle-double-left" />
       </button>
