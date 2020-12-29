@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './index.css'
 
 import { private_key } from '../../hooks/login/privateKey'
@@ -10,6 +11,16 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
 
 export const FormComponent: React.FC = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const getEmail = (e: any) => {
+    setEmail(e.target.value)
+  }
+  const getPassword = (e: any) => {
+    setPassword(e.target.value)
+  }
+
   return (
     <div className="w-5/6 h-5/6 flex items-center">
       <form className="w-full h-full p-9 flex items-center justify-center flex-col">
@@ -41,6 +52,7 @@ export const FormComponent: React.FC = () => {
               name="email"
               placeholder="gabriel@example.com"
               className="w-full h-9 p-4 bg-gray-100 text-gray-900 rounded-md shadow-lg focus:ring focus:ring-green-600 focus:ring-2"
+              onChange={getEmail}
             />
           </div>
         </div>
@@ -58,21 +70,7 @@ export const FormComponent: React.FC = () => {
               name="password"
               placeholder="**********"
               className="w-full h-9 p-4 bg-gray-100 text-gray-900 rounded-md shadow-lg focus:ring focus:ring-green-600 focus:ring-2"
-            />
-          </div>
-
-          <div className=" w-full mb-4 flex flex-col">
-            <label
-              htmlFor="avatarUrl"
-              className="text-green-600 uppercase text-base"
-            >
-              AvatarUrl
-            </label>
-            <input
-              type="url"
-              name="avatarUrl"
-              placeholder="https://myimage.png"
-              className="w-full h-9 p-4 bg-gray-100 text-gray-900 rounded-md shadow-lg focus:ring focus:ring-green-600 focus:ring-2"
+              onChange={getPassword}
             />
           </div>
         </div>
@@ -82,7 +80,7 @@ export const FormComponent: React.FC = () => {
             <button
               className="w-full bg-green-600 h-9 text-green-50 uppercase rounded-md shadow-lg hover:bg-green-500 transition"
               onClick={() => {
-                login(private_key)
+                login(email, password)
                 browserHistory.push('/dashboard')
               }}
             >
